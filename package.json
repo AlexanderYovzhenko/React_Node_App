@@ -1,0 +1,29 @@
+{
+  "name": "react_node_app",
+  "version": "1.0.0",
+  "description": "react_node_app(mui, express, mongo)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoldenManBel/React_Node_App.git"
+  },
+  "keywords": [
+    "react",
+    "node.js",
+    "express",
+    "mongo"
+  ],
+  "author": "Alexander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GoldenManBel/React_Node_App/issues"
+  },
+  "homepage": "https://github.com/GoldenManBel/React_Node_App#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
