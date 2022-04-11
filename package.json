@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/GoldenManBel/React_Node_App#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "uuid": "^8.3.2"
   }
 }
