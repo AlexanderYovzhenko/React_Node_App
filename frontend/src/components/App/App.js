@@ -1,29 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import Form from '../form/form';
 import './App.css';
 
 function App() {
-  const [ data, setData ] = useState(null);
-
-  useEffect(() => {
-    fetch('/api')
-      .then(response => {
-        console.log(response);
-        return response.json()})
-      .then(data => {
-        console.log(data);
-       return setData(data.message);
-      // .catch(err => {
-      //   console.error(err);
-      });  
-  }, []);
+  const [ responseServer, setResponseServer ] = useState({ message: "buy"});
 
   return (
     <div className="App">
-      <p>
-          {
-            !data ? 'Loading...' : data
-          }
-        </p>
+      <h1>Payment form</h1>
+      <Form setResponseServer={setResponseServer} />
+      <div className='responseServer'>
+        <h2>{responseServer.message}</h2> 
+        <p>{JSON.stringify(responseServer.response)}</p>
+      </div>
     </div>
   );
 }

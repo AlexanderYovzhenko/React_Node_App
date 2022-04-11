@@ -1,0 +1,22 @@
+.input {
+  width: 30vw;
+  height: 40px;
+  border-radius: 10px;
+  border-color: aqua;
+  line-height: normal !important;
+  padding: 0 10px;
+  font-size: 25px;
+}
+
+.button {
+  width: 30vw;
+  height: 40px;
+  border-radius: 10px;
+  border-color: aqua;
+  cursor: pointer;
+  color: #000;
+}
+
+.helperText {
+  font-size: 15px;
+}
