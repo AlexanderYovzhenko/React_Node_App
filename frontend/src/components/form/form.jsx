@@ -152,7 +152,7 @@ function Form(props) {
         <p className='helperText helperExpirationDate' style={{ color: isValidCardAmount ? 'green' : 'red' }}>{helperAmount}</p>
         <br />
         <button className='button ButtonSubmit' type='submit' disabled={buttonDisable}>
-          SEND
+          PAY
         </button>
       </form>
   );
