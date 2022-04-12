@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import mongoose from 'mongoose';
 
 const PORT = process.env.PORT || 8080;
+const connectionUrl = process.env.MONGO_URL || "mongodb+srv://Alexander:senior2020@cluster0.37kyr.mongodb.net/form?retryWrites=true&w=majority";
 
 const server = express();
 
@@ -33,8 +34,6 @@ const FormSchema = new Schema({
 })
 
 const FormModel = mongoose.model("form", FormSchema);
-
-const connectionUrl = "mongodb+srv://Alexander:senior2020@cluster0.37kyr.mongodb.net/form?retryWrites=true&w=majority"
 
 mongoose.connect(connectionUrl, {useNewUrlParser: true, useUnifiedTopology: true}, (err)=>{
     if(err) throw err
