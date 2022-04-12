@@ -5,7 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "heroku-postbuild": "cd frontend && npm install && npm start"
   },
   "repository": {
     "type": "git",
