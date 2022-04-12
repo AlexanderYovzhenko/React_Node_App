@@ -25,7 +25,10 @@
   "homepage": "https://github.com/GoldenManBel/React_Node_App#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "config": "3.3.1",
     "express": "^4.17.3",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.2.10",
     "uuid": "^8.3.2"
   }
 }
