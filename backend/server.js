@@ -2,10 +2,6 @@ import express from "express";
 import bodyParser from 'body-parser';
 import { v4 as uuidv4 } from 'uuid';
 import mongoose from 'mongoose';
-import path, { dirname } from "path";
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const PORT = process.env.PORT || 8080;
 const connectionUrl = process.env.MONGO_URL || "mongodb+srv://Alexander:senior2020@cluster0.37kyr.mongodb.net/form?retryWrites=true&w=majority";
@@ -48,7 +44,6 @@ server.listen(PORT, () => {
   console.info('Server is running!');
 });
 
-server.use(express.static(path.resolve(__dirname, "./frontend/public")));
 server.use(express.urlencoded({extended: false}));
 server.use(bodyParser.json());
 
