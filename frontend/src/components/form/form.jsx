@@ -17,7 +17,7 @@ function Form(props) {
 
   const [ formData, setFormData ] = useState({});
 
-  const fetchServer = () => {
+  const fetchServer = async () => {
     fetch('/api', {
       method: 'POST',
       body: JSON.stringify(formData),
@@ -29,8 +29,7 @@ function Form(props) {
       return response.json()})
     .then(data => {
       console.log(data);
-     return props.setResponseServer({message: data.message, response: data.response});
-    
+     return props.setResponseServer({message: data.message, response: data.savedData});
     })
     .catch(err => {
       console.error(err);
@@ -46,6 +45,15 @@ function Form(props) {
     setFormData(formData);
     event.target.reset()
     fetchServer();  
+  }
+
+  const buttonDisableChange = () => {
+    const arrIsValid = [isValidCardNumber, isValidExpirationDate, isValidCVV, isValidCardAmount];
+    if (!arrIsValid.includes(false)) {
+      setButtonDisable(false);
+    } else {
+      setButtonDisable(true);
+    }
   }
 
   const onChange = async (event) => {
@@ -89,12 +97,7 @@ function Form(props) {
       default:
         break;
     }
-    const arrIsValid = [isValidCardNumber, isValidExpirationDate, isValidCVV, isValidCardAmount];
-    if (!arrIsValid.includes(false)) {
-      setButtonDisable(false);
-    } else {
-      setButtonDisable(true);
-    }
+    buttonDisableChange();
   }
 
   return (
